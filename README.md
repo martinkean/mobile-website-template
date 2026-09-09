@@ -1,13 +1,13 @@
 # Mobile Website Template
  
-Kia ora, and welcome! This repo is a starter template for our class project. Follow the steps below to get your own copy set up in VS Code and pushed to your own GitHub account.
+Kia ora koutou. This repo is a starter template for the mobile website template. Follow the steps below to get your own copy set up in VS Code and pushed to your own GitHub account.
  
 ## 1. Get your own copy of the template
  
 1. Go to this repository on GitHub.
 2. Click the green **"Use this template"** button (top right, above the file list).
 3. Select **"Create a new repository"**.
-4. Choose your own GitHub account as the owner, give your new repo a name (e.g. `your-name-class-project`), and set it to **Public** or **Private** — either is fine.
+4. Choose your own GitHub account as the owner, give your new repo a name (e.g. `your-name-mobile-template`), and set it to **Public**.
 5. Click **"Create repository from template"**.
 You now have your own independent copy of this project on your GitHub account, with a clean history — it isn't linked back to the original.
  
