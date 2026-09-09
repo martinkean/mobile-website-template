@@ -1,0 +1,542 @@
+/*  = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+  Author: Your name here
+  Date: creation date
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+  
+      001.  COLOUR
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+:root {
+    --dark-text: #6b4740;
+    --light-text: #fcfcfa;
+    --cream-text: #F2E6D8;
+    --medium-dark-text: #6b4740;
+    --main-background: rgb(240, 233, 224);
+    --header-background: #F2E6D8;
+    --intro-background: #BF9B7A;
+    --dark-background: #6b4740;
+    --portrait-background: #8C5B3E;
+    --landscape-background: #8C5B3E;
+    --dark-border-colour: #6b4740;
+    --button-colour: #6b4740;
+    --dark-green: #6b4740;
+    --slide-out-menu-background: #F2E6D8;
+    --footer-background: #6b4740;
+    --off-white: #F2E6D8;
+    --description-text: #BF9B7A;
+    --description-text-colour: #F2E6D8;
+    --light-silver: #F2E6D8;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+  
+      002.  GENERAL STYLES
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+body {
+    font-family:  'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #593E2E;
+    font-size: 1.2rem;
+    /* background-color: #97c8e3; */
+}
+
+img {
+    width: 100%;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* This is the main content container for all pages - max width 1200px, or 75rem*/
+main {
+    max-width: 1200px;
+    background-color: var(--main-background);
+    margin: 0 auto;
+    /* The line above makes the container centred within the page */
+    border: 1rem solid #8C5B3E;
+    border-radius: 1rem;
+    min-height: 100dvh;
+
+}
+
+.external-link {
+    text-decoration: underline;
+    color: var(--cream-text);
+}
+
+.grid-heading {
+    font-weight: 500;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+  
+    003.  HEADER
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+header {
+    position: relative; /* <-- needed so .icon anchors to the header, not the page */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0 2rem 2rem;
+    min-height: 7rem;
+}
+
+header h1 {
+    color: var(--dark-text);
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    004.  NAVIGATION MENU
+  
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+header {
+    position: relative; /* anchors .icon to the header, not the page */
+}
+
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 0.5rem 2rem;
+    width: 100%;
+}
+
+.topnav a {
+    color: #593E2E;
+    text-decoration: none;
+    font-size: 1.15rem;
+}
+
+.topnav a:hover {
+    text-decoration: underline;
+}
+
+.topnav a.current-page {
+    font-weight: 600;
+}
+
+.icon {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    color: #593E2E;
+    font-size: 2rem;
+}
+
+/* First breakpoint */
+@media screen and (max-width: 600px) {
+    header {
+        padding: 2rem 0 2rem 1rem;
+        min-height: 4rem;
+    }
+
+    .topnav a {
+        display: none;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .topnav.responsive {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40vw;
+        margin-top: 0;
+        padding: 6rem 2rem 4rem 2rem;
+        background-color: #BF9B7A;
+    }
+
+    .topnav.responsive a {
+        display: block;
+        text-align: right;
+    }
+}
+
+/* Second breakpoint */
+@media screen and (max-width: 400px) {
+    header h1 {
+        max-width: 18.75rem;
+        line-height: 100%;
+    }
+
+    header {
+        padding-bottom: 2rem;
+    }
+}
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    005.  DRAGGABLE AREA
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.draggable-area {
+    /* height: 1000px; */
+    min-height: 70dvh;
+}
+
+.draggable {
+  position: absolute;
+  z-index: 999;
+  text-align: center;
+  cursor: move;
+  touch-action: none;
+  object-fit: contain;
+}
+
+.box {
+  border: 10px solid #edf0f5;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.box1 {
+  background-color: tomato;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.box2 {
+  background-color: blue;
+width: 200px;
+  height: 200px;
+}
+
+.cow { 
+  width: 250px;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.bear { 
+  width: 200px;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.draggable:hover, .draggable:active {
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));
+    }
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    007.  PORTRAIT LAYOUT - for a grid of portrait format images
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* This sets the grid layout for the page. */
+@supports (display: grid) {
+    .portrait__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        gap: 2rem;
+        margin: 2rem;
+    }
+}
+
+/* This 'portrait' class is a container for the text and images */
+.portrait {
+    text-align: center;
+    background-color: var(--portrait-background);
+    border-radius: .4rem;
+    padding: 2rem 2rem 1.4rem 2rem;
+    transition: box-shadow .3s;
+    text-decoration: none;
+}
+
+.portrait:hover {
+    box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
+}
+
+.portrait__image {
+    width: 100%;
+}
+
+.portrait__name {
+    color: var(--cream-text);
+    font-weight: 400;
+    margin-top: .8rem;
+    margin-bottom: .4rem;
+}
+
+.portrait__description {
+    color: var(--cream-text);
+    font-weight: 400;
+    font-size: .7rem;
+    margin-bottom: 1rem;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    008.  LANDSCAPE LAYOUT - for a grid of landscape format images
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* This sets the grid layout for the page. */
+@supports (display: grid) {
+    .landscape__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+        gap: 1rem;
+        margin: 1rem;
+    }
+}
+
+/* This 'landscape' class is a container for the text and images */
+.landscape {
+    text-align: center;
+    background-color: var(--landscape-background);
+    border-radius: .4rem;
+    padding: 2rem 2rem 1.4rem 2rem;
+    transition: box-shadow .3s;
+    text-decoration: none;
+}
+
+.landscape:hover {
+    box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
+}
+
+.landscape__image {
+    width: 100%;
+}
+
+.landscape__name {
+    color: var(--cream-text);
+    font-weight: 400;
+    margin-top: .8rem;
+    margin-bottom: .4rem;
+}
+
+.landscape__description {
+    color: var(--cream-text);
+    font-weight: 400;
+    font-size: .7rem;
+    margin-bottom: 1rem;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    009.  MASONRY LAYOUT - for a mix of landscape and portrait format images
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* masonry grid CSS */
+.grid--masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(24rem, 100%));
+    grid-template-rows: masonry;
+    justify-content: center;
+    grid-row-gap: 1.25rem;
+    grid-column-gap: 1.25rem;
+    grid-gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+.grid--masonry>* {
+    width: min(24rem, 100%);
+}
+
+.grid--masonry img {
+    border-radius: 4px;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    010.  SINGLE ITEM LAYOUT
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/*  Using 'grid-template-areas' you can design the layout of the containers 
+      For Desktop and Mobile device widths. This layout displays containers in 2 columns, for Desktop and Laptop, and 1 column for phones. 
+      A full-stop '.' means 'create a space' */
+
+@supports (display: grid) {
+    .single-item {
+        display: grid;
+        gap: 1.5rem;
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+            'single-item__image single-item__h2'
+            'single-item__image single-item__h3'
+            'single-item__image single-item__introduction'
+            'single-item__block-one single-item__block-two';
+        padding-block: 2rem;
+        width: min(95%, 70em);
+        margin-inline: auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .single-item__image {
+        max-width: 400px;
+    }
+}
+
+/* For mobile device widths, containers below are stacked in a single column - max width 875px or 54.688rem */
+@media screen and (max-width: 875px) {
+    .single-item {
+        grid-template-areas: 'single-item__h2'
+            'single-item__image'
+            'single-item__h3'
+            'single-item__introduction'
+            'single-item__block-one'
+            'single-item__block-two';
+        margin-left: 1em;
+    }
+}
+
+.single-item__image {
+    grid-area: single-item__image;
+    width: 100%;
+    max-width: 800px;
+}
+
+.single-item__h2 {
+    grid-area: single-item__h2;
+    color: var(--dark-text);
+    font-weight: 400;
+    font-size: 2.6rem;
+}
+
+.single-item__h3 {
+    grid-area: single-item__h3;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.8rem;
+}
+
+.single-item__introduction {
+    grid-area: single-item__introduction;
+    font-weight: 400;
+    font-size: 1.2rem;
+    max-width: 24rem;
+    margin-bottom: .5rem;
+}
+
+.single-item__block-one {
+    grid-area: single-item__block-one;
+}
+
+.single-item__block-two {
+    grid-area: single-item__block-two;
+}
+
+.single-item__h4 {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.single-item__p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.single-item__ul {
+    list-style-type: none;
+}
+
+.single-item__ul li {
+    padding-left: 1rem;
+    background-image: url(images/list-image.svg);
+    background-position: 0 .5rem;
+    background-size: .7rem .7rem;
+    background-repeat: no-repeat;
+}
+
+/* This 'Next' button below is unused at the moment. Where might you use this in your web page? */
+.next-button {
+    background-color: var(--dark-text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 0;
+    font-size: 26px;
+    color: var(--off-white);
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.next-button i {
+    margin-left: .2rem;
+}
+
+.next-button:hover {
+    background-color: var(--dark-text);
+}
+
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  
+    012.  WEBSITE FOOTER
+  
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+footer {
+    background-color: var(--footer-background);
+    margin-top: 10px;
+    padding: 2rem;
+    color: var(--off-white);
+}
+
+footer p {
+    font-size: .8rem;
+}
+
+
+
+
+/* = = =   E N D   O F   T H E   C S S  = = = */
+
+/* *********************
+    CSS BREAKPOINTS
+   ********************* */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
